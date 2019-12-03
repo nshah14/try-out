@@ -4,15 +4,16 @@ pipeline {
    stages {
       stage('Git Checkout ') {
          steps {
+            // git clone https://mtlstash.gv.grassvalley.com/scm/lt/devops.git
           sh '''
-          git clone https://mtlstash.gv.grassvalley.com/scm/lt/devops.git
-          
+             git clone --single-branch --branch cherrypy-with-logging https://10.162.1.15/scm/mtlstash/lt/portmanagerws.git
           '''
          }
       }
       stage('Docker Build Checkout ') {
          steps {
             echo 'Docker build '
+
          }
       }
       stage('Docker tag ') {
