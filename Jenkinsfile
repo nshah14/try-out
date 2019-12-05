@@ -1,13 +1,17 @@
 pipeline {
     agent { label 'dev' }
-
+    stage('Git') {
+            steps {
+                step([$class: 'WsCleanup'])
+                checkout scm
+            }
+        }
    stages {
       stage('Git Checkout ') {
          steps {
             // git clone https://mtlstash.gv.grassvalley.com/scm/lt/devops.git
           sh '''
-             git clone https://10.162.1.15/scm/mtlstash/lt/portmanagerws.git 
-             git checkout -B cherrypy-with-logging 
+             git checkout -b cherrypy-with-logging https://10.162.1.15/scm/mtlstash/lt/portmanagerws.git
              kubectl get pods 
              kubectl get nodes
           '''
