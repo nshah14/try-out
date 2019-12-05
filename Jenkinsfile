@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'kube' }
+    agent { label 'dev' }
 
    stages {
       stage('Git Checkout ') {
