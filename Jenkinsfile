@@ -12,7 +12,7 @@ pipeline {
          steps {
             // git clone https://mtlstash.gv.grassvalley.com/scm/lt/devops.git
           sh '''
-             git checkout -b cherrypy-with-logging https://10.162.1.15/scm/mtlstash/lt/portmanagerws.git
+             git clone -b cherrypy-with-logging https://10.162.1.15/scm/mtlstash/lt/portmanagerws.git
              kubectl get pods 
              kubectl get nodes
           '''
