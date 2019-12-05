@@ -1,12 +1,13 @@
 pipeline {
     agent { label 'dev' }
+       stages {
     stage('Git') {
             steps {
                 step([$class: 'WsCleanup'])
                 checkout scm
             }
         }
-   stages {
+
       stage('Git Checkout ') {
          steps {
             // git clone https://mtlstash.gv.grassvalley.com/scm/lt/devops.git
